@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import ServicioCard from '../components/ServicioCard.vue'
 
 // Por ahora los datos están aquí, en la Etapa 8 los traeremos con fetch
@@ -60,6 +60,13 @@ const serviciosFiltrados = computed(() => {
 // Lógica de favoritos
 const favoritos = ref<number[]>([])
 
+onMounted(() => {
+  const datosGuardados = localStorage.getItem('favoritos')
+  if (datosGuardados) {
+    favoritos.value = JSON.parse(datosGuardados)
+  }
+})
+
 const manejarFavorito = (id: number) => {
   if (favoritos.value.includes(id)) {
     // Si ya es favorito, lo quitamos
@@ -68,6 +75,8 @@ const manejarFavorito = (id: number) => {
     // Si no es favorito, lo agregamos
     favoritos.value.push(id)
   }
+  // Guardamos en localStorage
+  localStorage.setItem('favoritos', JSON.stringify(favoritos.value))
 }
 </script>
 
