@@ -1,42 +1,25 @@
-# servicios-nuble
+# Plataforma de Servicios Profesionales de Ñuble
 
-This template should help get you started developing with Vue 3 in Vite.
+Este es mi proyecto para la Evaluación 2. Es una página web para buscar y contactar a profesionales que ofrecen sus servicios en la Región de Ñuble.
 
-## Recommended IDE Setup
+## Lo que hace la página
+- Tiene distintas pestañas para navegar (Inicio, Servicios, Favoritos, Contacto).
+- Puedes ver un catálogo de los servicios disponibles.
+- Puedes filtrar por el nombre del servicio o elegir una categoría.
+- Puedes ver el detalle completo de cada servicio.
+- Puedes marcar o desmarcar servicios como favoritos haciendo clic en la estrellita. Los favoritos no se borran al recargar la página.
+- El catálogo se carga usando Fetch simulando una base de datos.
+- Hay un formulario de contacto que funciona con validaciones básicas.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Cómo hacerla funcionar
+1. Primero instala las cosas necesarias usando:
+   `npm install`
+2. Luego levanta la página con:
+   `npm run dev`
+3. Abre el enlace local que te sale en la consola.
 
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Tecnologías usadas
+- Vue.js 3
+- Vue Router para las pestañas
+- localStorage para guardar los favoritos
+- Fetch API para cargar el JSON
