@@ -6,19 +6,28 @@
     <p><strong>Precio:</strong> ${{ servicio.precio }}</p>
     <p><strong>Disponible:</strong> <span :class="servicio.disponible ? 'verde' : 'rojo'">{{ servicio.disponible ? 'Sí' : 'No' }}</span></p>
     
-    <RouterLink :to="`/servicios/${servicio.id}`">Ver Detalle</RouterLink>
+    <div class="acciones">
+      <RouterLink :to="`/servicios/${servicio.id}`">Ver Detalle</RouterLink>
+      <button @click="$emit('toggle-favorito', servicio.id)">
+        {{ esFavorito ? 'ya no me guta' : 'si me guta' }}
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
-
 const props = defineProps({
   servicio: {
     type: Object,
     required: true
+  },
+  esFavorito: {
+    type: Boolean,
+    default: false
   }
 })
+
+defineEmits(['toggle-favorito'])
 </script>
 
 <style scoped>
@@ -35,5 +44,15 @@ const props = defineProps({
 .rojo {
   color: red;
   font-weight: bold;
+}
+.acciones {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+  padding: 5px 10px;
+  cursor: pointer;
 }
 </style>

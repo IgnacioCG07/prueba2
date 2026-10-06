@@ -21,6 +21,8 @@
         v-for="servicio in serviciosFiltrados" 
         :key="servicio.id" 
         :servicio="servicio"
+        :esFavorito="favoritos.includes(servicio.id)"
+        @toggle-favorito="manejarFavorito"
       />
     </div>
     <div v-else class="mensaje-vacio">
@@ -54,6 +56,19 @@ const serviciosFiltrados = computed(() => {
     return coincideNombre && coincideCategoria
   })
 })
+
+// Lógica de favoritos
+const favoritos = ref<number[]>([])
+
+const manejarFavorito = (id: number) => {
+  if (favoritos.value.includes(id)) {
+    // Si ya es favorito, lo quitamos
+    favoritos.value = favoritos.value.filter(favId => favId !== id)
+  } else {
+    // Si no es favorito, lo agregamos
+    favoritos.value.push(id)
+  }
+}
 </script>
 
 <style scoped>
