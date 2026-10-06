@@ -1,0 +1,9 @@
+[
+  { "id": 1, "nombre": "Gasfitería Express", "categoria": "Hogar", "descripcion": "Reparación de cañerías y fugas.", "precio": 25000, "disponible": true },
+  { "id": 2, "nombre": "Asesoría Contable", "categoria": "Negocios", "descripcion": "Declaración de impuestos y balances.", "precio": 50000, "disponible": true },
+  { "id": 3, "nombre": "Clases de Matemáticas", "categoria": "Educación", "descripcion": "Preparación para la PAES.", "precio": 15000, "disponible": false },
+  { "id": 4, "nombre": "Instalación Eléctrica", "categoria": "Hogar", "descripcion": "Revisión y cambio de enchufes.", "precio": 30000, "disponible": true },
+  { "id": 5, "nombre": "Diseño Gráfico", "categoria": "Tecnología", "descripcion": "Creación de logos y banners.", "precio": 40000, "disponible": true },
+  { "id": 6, "nombre": "Entrenador Personal", "categoria": "Salud", "descripcion": "Rutinas de gimnasio a domicilio.", "precio": 20000, "disponible": true },
+  { "id": 7, "nombre": "Jugador de fuchibol", "categoria": "Deporte", "descripcion": "Ankara Messi, el jugadorazo.", "precio": 676767, "disponible": true }
+]
